@@ -1,16 +1,16 @@
-const inputNote1 = document.querySelector("#note1");
-const inputNote2 = document.querySelector("#note2");
-const inputNote3 = document.querySelector("#note3");
+const inputGrade1 = document.querySelector("#grade1");
+const inputGrade2 = document.querySelector("#grade2");
+const inputGrade3 = document.querySelector("#grade3");
 const btnAverage = document.querySelector(".btn-average");
 const message = document.querySelector(".message");
 
-btnAverage.addEventListener("click", generateAverage);
+btnAverage.addEventListener("click", processGrades);
 document.addEventListener("keydown", enterKey);
 
-function generateAverage() {
-    const average = (Number(inputNote1.value) + Number(inputNote2.value) + Number(inputNote3.value)) / 3;
+function processGrades() {
+    const average = (Number(inputGrade1.value) + Number(inputGrade2.value) + Number(inputGrade3.value)) / 3;
 
-    if(Number(inputNote1.value) === 0 && Number(inputNote2.value) === 0 && Number(inputNote3.value) === 0) {
+    if(Number(inputGrade1.value) === 0 && Number(inputGrade2.value) === 0 && Number(inputGrade3.value) === 0) {
         message.innerHTML = "Digite uma nota maior que 0";
     } else {
         if(average >= 6) {
@@ -23,7 +23,7 @@ function generateAverage() {
 
 function enterKey(event) {
     if((event.key == "Enter")) {
-        generateAverage()
+        processGrades()
     }
 };
 
